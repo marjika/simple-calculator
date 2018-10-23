@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple Calculator</title>
+
+        <!-- <link rel="stylesheet" href="jasmine/jasmine.css">
+
+        <script type="text/javascript" src="jasmine/jasmine.js"></script>
+        <script type="text/javascript" src="jasmine/jasmine-html.js"></script>
+        <script type="text/javascript" src="jasmine/boot.js"></script> -->
+            
+        <script src="calculator.js"></script>
+        <script src="main.js"></script>
+
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+
+        <!-- <script type="text/javascript">
+            it('should have the correct title', function() {
+                expect(document.title).toBe('My first spec');
+            });
+        </script> -->
+
+    </head>
+
+    <body class="body">
+        <h1 class= "title">Simple Calculator</h1>
+        <input 
+            type="text" 
+            class="input" 
+            title="calculator"
+            placeholder="Enter operation"
+            value="2+1"            
+            onchange="calculate(this.value)">
+        <div class="result-container">
+            <div class="title">Result</div> 
+            <span id="result">3</span>
+        </div>
+    </body>
+
+</html>
