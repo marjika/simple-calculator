@@ -29,5 +29,72 @@ describe("calculator.js", function() {
         
         expect(calculator.total).toBe(100);
     }) 
-    //TODO: specs
+    
+    it("should initialize the calculator", function() {
+        const calculator= new Calculator();
+
+        expect(calculator.total).toBe(0);
+        expect(calculator.total).toBeFalsy();
+    });
+
+    it("can be instantiated", function() {
+        const calculator = new Calculator();
+        const calculator2 = new Calculator();
+
+        expect(calculator).toBeTruthy();
+        expect(calculator2).toBeTruthy();
+        expect(calculator).toEqual(calculator2);
+        expect(calculator.constructor.name).toContain("Calc");
+    });
+
+    it("instantiates unique object", function() {
+        const calculator = new Calculator();
+        const calculator2 = new Calculator();
+
+        expect(calculator).not.toBe(calculator2);
+    });
+
+    it("has common operations", function() {
+        const calculator = new Calculator();
+
+        expect(calculator.add).toBeDefined(); // or .not.toBeUndefined();
+        expect(calculator.subtract).toBeDefined(); // or .not.toBeUndefined();
+        expect(calculator.multiply).toBeDefined(); // or .not.toBeUndefined();
+        expect(calculator.divide).toBeDefined(); // or .not.toBeUndefined();
+
+    });
+
+    it("can overwrite total", function() {
+        const calculator = new Calculator();
+
+        calculator.total = null;
+
+        expect(calculator.total).toBeNull();
+    });
+
+    it("does not handle NaN", function() {
+        const calculator = new Calculator();
+         
+        calculator.total = 20;
+        calculator.multiply("a");
+        expect(calculator.total).toBeNaN();
+    });
+
+    it("handles divide by zero", function() {
+        const calculator = new Calculator();
+
+        expect(function() { calculator.divide(0) }).toThrow();
+        expect(function() { calculator.divide(0) }).toThrowError(Error, "Cannot divide by zero");
+
+    });
+
+    it("returns total", function() {
+        const calculator = new Calculator();
+        calculator.total = 50;
+
+        expect(calculator.add(20)).toBe(70);
+        expect(calculator.total).toMatch(/-?\d+/);
+        expect(typeof calculator.total).toMatch('number');
+    })
+
 });
