@@ -1,18 +1,28 @@
 describe("calculator.js", function() {
     describe("Calculator" , function() {
+        let calculator;
+        let calculator2;
+
+        beforeEach(function() {
+            //Anything inside this block executes before 
+            //each spec (it) inside this describe.
+            calculator = new Calculator();
+            calculator2 = new Calculator();
+        });
+
+        afterEach(function() {
+            //Anything in this block executes after each
+            //spec (it) inside this describe.
+
+        });
                 
-        it("should initialize the calculator", function() {
-            const calculator= new Calculator();
-    
+        it("should initialize the calculator", function() {    
             expect(calculator.total).toBe(0);
             expect(calculator.total).toBeFalsy();
         });
     
         it("can be instantiated", function() {
             jasmine.addMatchers(customMatchers);
-    
-            const calculator = new Calculator();
-            const calculator2 = new Calculator();
     
             expect(calculator).toBeCalculator(); //custom
             expect(calculator).toBeTruthy();
@@ -22,15 +32,11 @@ describe("calculator.js", function() {
         });
     
         it("instantiates unique object", function() {
-            const calculator = new Calculator();
-            const calculator2 = new Calculator();
     
             expect(calculator).not.toBe(calculator2);
         });
     
-        it("has common operations", function() {
-            const calculator = new Calculator();
-    
+        it("has common operations", function() {    
             expect(calculator.add).toBeDefined(); // or .not.toBeUndefined();
             expect(calculator.subtract).toBeDefined(); // or .not.toBeUndefined();
             expect(calculator.multiply).toBeDefined(); // or .not.toBeUndefined();
@@ -39,8 +45,6 @@ describe("calculator.js", function() {
         });
     
         it("can overwrite total", function() {
-            const calculator = new Calculator();
-    
             calculator.total = null;
     
             expect(calculator.total).toBeNull();
@@ -48,14 +52,12 @@ describe("calculator.js", function() {
 
         describe("add()", function() {
             it("should add the number to the total", function() {
-                const calculator = new Calculator();
                 calculator.add(5);
         
                 expect(calculator.total).toBe(5);
             })
                 
-            it("returns total", function() {
-                const calculator = new Calculator();
+            it("returns total", function() {;
                 calculator.total = 50;
         
                 expect(calculator.add(20)).toBe(70);
@@ -68,7 +70,6 @@ describe("calculator.js", function() {
 
         describe("subtract()", function() {
             it("should should subtract the number from the total", function() {
-                const calculator = new Calculator();
                 calculator.total = 30;
                 calculator.subtract(5);
                 
@@ -78,16 +79,13 @@ describe("calculator.js", function() {
 
         describe("multiply()", function() {                    
             it("should multiply total by the number", function() {
-                const calculator = new Calculator();
                 calculator.total = 100;
                 calculator.multiply(2);
                 
                 expect(calculator.total).toBe(200);
             })
 
-            it("does not handle NaN", function() {
-                const calculator = new Calculator();
-                 
+            it("does not handle NaN", function() {                 
                 calculator.total = 20;
                 calculator.multiply("a");
                 expect(calculator.total).toBeNaN();
@@ -96,16 +94,13 @@ describe("calculator.js", function() {
 
         describe("divide()", function() {
             it("should divide the total by the number", function() {
-                const calculator = new Calculator();
                 calculator.total = 200;
                 calculator.divide(2);
                 
                 expect(calculator.total).toBe(100);
             }) 
 
-            it("handles divide by zero", function() {
-                const calculator = new Calculator();
-        
+            it("handles divide by zero", function() {        
                 expect(function() { calculator.divide(0) }).toThrow();
                 expect(function() { calculator.divide(0) }).toThrowError(Error, "Cannot divide by zero");
         
