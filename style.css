@@ -38,3 +38,9 @@
     font-size: 44px;
     text-align: center;
 }
+
+.version {
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}

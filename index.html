@@ -12,6 +12,11 @@
             
         <script src="calculator.js"></script>
         <script src="main.js"></script>
+        <script>
+            window.onload = function() {
+                showVersion();
+            }
+            </script>
 
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
@@ -37,6 +42,8 @@
             <div class="title">Result</div> 
             <span id="result">3</span>
         </div>
+
+        <div class="version">version <span id="version"></span></div>
     </body>
 
 </html>
