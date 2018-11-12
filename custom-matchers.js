@@ -3,7 +3,7 @@ const customMatchers = {
         return {
             compare: function(actual) {
                 const result = {
-                    pass: actual instanceof Calculator, //TODO
+                    pass: actual instanceof Calculator,
                     message: ''
                 }
 

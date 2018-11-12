@@ -106,6 +106,14 @@ describe("calculator.js", function() {
         
             }); 
         });      
+
+        describe("get version", function() {
+            it("fetches version from external source", function() {
+                calculator.version.then(function() {
+                    
+                })
+            });
+        });
     });
     
 });

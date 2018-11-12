@@ -132,4 +132,18 @@ describe("main.js", function() {
             expect(this.element.innerText).toBe("5");
         });
     });
+
+    describe("showVersion()", function() {
+        it("calls calculator.version", function() {
+            spyOn(document, "getElementById").and.returnValue({
+                innerText: null
+            });
+
+        const spy = spyOnProperty(Calculator.prototype, "version", "get");
+
+        showVersion();
+
+        expect(spy).toHaveBeenCalled();
+        });
+    });
 });
