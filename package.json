@@ -1,0 +1,26 @@
+{
+  "name": "simple-calulator",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marjika/simple-calculator.git"
+  },
+  "author": "Marjika Howarth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marjika/simple-calculator/issues"
+  },
+  "homepage": "https://github.com/marjika/simple-calculator#readme",
+  "devDependencies": {
+    "jasmine-core": "^3.3.0",
+    "karma": "^3.1.1",
+    "karma-jasmine": "^2.0.0",
+    "karma-jasmine-matchers": "^3.8.3"
+  },
+  "dependencies": {}
+}
