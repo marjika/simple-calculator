@@ -108,15 +108,16 @@ describe("calculator.js", function() {
         });      
 
         describe("get version", function() {
-            it("fetches version from external source", async function(done) {
+            it("fetches version from external source", function(done) {
                 spyOn(window, "fetch").and.returnValue(Promise.resolve(
                     new Response('{ "version": "0.1" }')
                 ));
 
-                const version = await calculator.version;
-                expect(version).toBe("0.1");
-
-                done();
+                calculator.version.then(function(version) {
+                    expect(version).toBe("0.1");
+                
+                    done();
+                });
             });
         });
     });
