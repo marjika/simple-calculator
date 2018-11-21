@@ -1,5 +1,7 @@
 <h2>Testing with Jasmine (and Karma, etc.)</h2>
 
+[![Build Status](https://travis-ci.org/marjika/simple-calculator.svg?branch=master)](https://travis-ci.org/marjika/simple-calculator)
+
 <h4>Simple Calculator</h4>
 
 This application was created to practice writing and implementing tests with Jasmine.  The basic application is a calculator program.  The main purpose is to write tests for proactice in a Udemy Jasmine testing course.
