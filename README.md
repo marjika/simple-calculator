@@ -15,4 +15,4 @@ The npms for this application are all devDependencies adapted to run tests on th
 
 This project concludes a course taken to explore testing code with Jasmine.
 
-![Certificate](./jasmine-certificate.pdf)
+![Certificate](./jasmine-certificate.jpg)
